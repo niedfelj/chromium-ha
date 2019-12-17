@@ -1,0 +1,12 @@
+version: '2'
+services:
+  kiosk:
+    restart: always
+    build: ./kiosk
+    privileged: true
+    ports:
+      - 8080:8080
+    labels:
+      io.balena.features.dbus: '1'
+      io.balena.features.firmware: '1'
+      io.balena.features.kernel: '1'
